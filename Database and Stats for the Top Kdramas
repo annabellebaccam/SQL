@@ -1,0 +1,30 @@
+--Create a table for top kdramas
+
+CREATE TABLE top_kdramas (id INTEGER PRIMARY KEY,name TEXT, genre TEXT, channel TEXT,rating INTEGER, released INTEGER);
+
+INSERT INTO top_kdramas VALUES(1,"The_World_of_the_Married","romance","JTBC",28.371,2020);
+INSERT INTO top_kdramas VALUES(2,"Reborn_Rich","fantasy","JTBC",26.948,2022);
+INSERT INTO top_kdramas VALUES(3,"Sky_Castle","drama","JTBC",23.779,2018);
+INSERT INTO top_kdramas VALUES(4,"Crash_Landing_on_You","romance","tvN",21.683,2019);
+INSERT INTO top_kdramas VALUES(5,"Reply_1988","drama","tvN",18.803,2015);
+INSERT INTO top_kdramas VALUES(6,"Goblin","drama","tvN",18.680,2016);
+INSERT INTO top_kdramas VALUES(7,"Mr.Sunshine","romance","tvN",18.129,2018);
+INSERT INTO top_kdramas VALUES(8,"Extraordinary_Attorney_Woo","drama","ENA",17.534,2022);
+INSERT INTO top_kdramas VALUES(9,"Mr.Queen","historical_comedy","tvN",17.371,2020);
+INSERT INTO top_kdramas VALUES(10,"Crash_Course_in_Romance","romance","tvN",17.038,2023);
+INSERT INTO top_kdramas VALUES(11,"Under_the_Queen's_Umbrella","historical_comedy","tvN",16.852,2022);
+INSERT INTO top_kdramas VALUES(12,"Love_ft.Marriage_and_Divorce_2","romance","TV_Chosun",16.582,2021);
+INSERT INTO top_kdramas VALUES(13,"Itaewon_Class","drama","JTBC",16.548,2020);
+INSERT INTO top_kdramas VALUES(14,"Agency","drama","JTBC",16.044,2023);
+INSERT INTO top_kdramas VALUES(15,"Vincenzo","crime","tvN",14.636,2021);
+
+--What are average, max, and min values in the data?
+SELECT name, AVG(rating)FROM top_kdramas GROUP BY name;
+SELECT MAX(rating)FROM top_kdramas;
+SELECT MIN(rating)FROM top_kdramas;
+
+--What are the shows that were released after 2020 and have a rating of less than 17?
+SELECT * FROM top_kdramas WHERE released >2020 AND rating <17;
+
+--What are the best kdramas to watch?
+SELECT rating FROM top_kdramas GROUP BY rating HAVING COUNT(*);
