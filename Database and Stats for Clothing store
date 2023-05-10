@@ -25,7 +25,7 @@ ORDER BY quantity;
 --how many items are being sold in the entire store?
 SELECT SUM(quantity) from store;
 
---what are the 5 most expense items"
+--what are the 5 most expensive items?
 SELECT item, price 
 FROM store 
 ORDER BY price
