@@ -18,14 +18,14 @@ INSERT INTO store VALUES(13,"dresses","summer",35,150);
 INSERT INTO store VALUES(14,"earrings","all",10,500);
 INSERT INTO store VALUES(15,"skirts","summer",25,150);
 
---display the database ordered by quantity.
+--Display the database ordered by quantity.
 SELECT * FROM store 
 ORDER BY quantity;
 
---how many items are being sold in the entire store?
+--How many items are being sold in the entire store?
 SELECT SUM(quantity) from store;
 
---what are the 5 most expensive items?
+--What are the 5 most expensive items?
 SELECT item, price 
 FROM store 
 ORDER BY price
