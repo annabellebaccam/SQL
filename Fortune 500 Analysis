@@ -1,3 +1,5 @@
+--Analysis of Fortune 500 data
+
 -- Assign “accommodating”, “tolerable”, and “not desirable” based off of paid time off days given
 SELECT company_name,
 CASE WHEN paid_time_off_days >= 20 THEN 'accommodating'
