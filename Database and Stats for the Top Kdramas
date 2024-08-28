@@ -18,13 +18,18 @@ INSERT INTO top_kdramas VALUES(13,"Itaewon_Class","drama","JTBC",16.548,2020);
 INSERT INTO top_kdramas VALUES(14,"Agency","drama","JTBC",16.044,2023);
 INSERT INTO top_kdramas VALUES(15,"Vincenzo","crime","tvN",14.636,2021);
 
---What are average, max, and min values in the data?
+-- What are average, max, and min values in the data?
 SELECT name, AVG(rating)FROM top_kdramas GROUP BY name;
 SELECT MAX(rating)FROM top_kdramas;
 SELECT MIN(rating)FROM top_kdramas;
 
---What are the shows that were released after 2020 and have a rating of less than 17?
-SELECT * FROM top_kdramas WHERE released >2020 AND rating <17;
+-- What are the shows that were released after 2020 and have a rating of less than 17?
+SELECT * 
+FROM top_kdramas 
+WHERE released >2020 AND rating <17;
 
---What are the best kdramas to watch?
-SELECT rating FROM top_kdramas GROUP BY rating HAVING COUNT(*);
+-- What are the best kdramas to watch?
+SELECT rating 
+FROM top_kdramas 
+GROUP BY rating 
+HAVING COUNT(*);
