@@ -1,5 +1,4 @@
 -- Assign “accommodating”, “tolerable”, and “not desirable” based off of paid time off days given
-
 SELECT company_name,
 CASE WHEN paid_time_off_days >= 20 THEN 'accommodating'
 WHEN paid_time_off_days >=15 THEN 'tolerable'
@@ -8,20 +7,17 @@ END as paid_time_off
 FROM fortune_companies;
 
 -- Which industries have the at least 10 weeks maternity leave weeks and have healthcare benefits?
-
 SELECT company_name
 FROM fortune_companies
 WHERE maternity_leave_weeks >= 10 
 AND healthcare_benefits >= 1;
 
 -- Which company in the technology industry has the most revenue; what is the rounded revenue value
-
 SELECT company_name, max(ROUND(revenue))
 FROM fortune_companies
 WHERE industry = 'Technology';
 
 -- Which industry has the highest revenue and what is the max revenue?
-
 SELECT industry, max_revenue 
 FROM (SELECT industry, MAX(revenue) AS max_revenue
 FROM fortune_companies 
