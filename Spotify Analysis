@@ -1,0 +1,23 @@
+-- For this project, I downloaded Spotify data from Kaggle.
+-- Then I created a table to insert Spotify data into.
+-- Finally, I analyzed the data using SQL. 
+
+-- What artist released the longest song? 
+SELECT artist_name, max_duration 
+FROM (SELECT artist_name, MAX(duration_ms) AS max_duration 
+FROM BIT_DB.spotifydata GROUP BY artist_name) AS artist_max_duration 
+ORDER BY max_duration DESC 
+LIMIT 1;
+
+-- What is the average danceability by artist and track? 
+SELECT AVG(danceability),artist_name,track_name
+FROM BIT_DB.spotifydata
+GROUP BY artist_name,track_name
+ORDER BY artist_name,track_name;
+
+-- What's the average danceability for the 10 most popular songs?
+SELECT avg(danceability),track_name
+FROM BIT_DB.spotifydata
+GROUP BY track_name
+ORDER BY avg(danceability) desc 
+LIMIT 10;
